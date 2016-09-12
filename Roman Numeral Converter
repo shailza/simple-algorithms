@@ -1,0 +1,16 @@
+Convert the given number into a roman numeral.
+
+function convertToRoman(num) {
+  var digi =[1000,900,500,400,100,90,50,40,10,9,5,4,1];
+  var romnum=['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I'];
+  var roman = '';
+  for( var i=0;i<digi.length;i++){
+    while(digi[i] <= num){
+      roman += romnum[i];
+      num -= digi[i];
+    }
+  }
+ return roman;
+}
+
+convertToRoman(36);
