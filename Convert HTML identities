@@ -1,0 +1,31 @@
+Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
+
+function convertHTML(str) {
+  // &colon;&rpar;
+  var newarr = str.split('');
+  for(var i=0;i<newarr.length;i++){
+    if(newarr[i] === "&"){
+       newarr[i] = "&amp;" ;
+       }
+       else if(newarr[i] === "<"){
+         newarr[i] = "&lt;" ;
+       }
+    else if(newarr[i] === ">"){
+      newarr[i] = "&gt;" ;
+    }
+    else if(newarr[i]=== '"'){
+            newarr[i] ="&quot;";
+            }
+    else if(newarr[i] === "'")
+      {
+        newarr[i]= "&apos;";
+      }
+    else
+      newarr[i]= newarr[i];
+    
+  }
+  
+  return newarr.join('');
+}
+
+convertHTML("Dolce & Gabbana");
