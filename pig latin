@@ -1,0 +1,33 @@
+Translate the provided string to pig latin.
+
+Pig Latin takes the first consonant (or consonant cluster) of an English word, moves it to the end of the word and suffixes an "ay".
+
+If a word begins with a vowel you just add "way" to the end.
+
+
+function translatePigLatin(str) {
+  var arr = str.split('');
+  var vow = ["a","e","i","o","u"];
+  var flag=0;
+  var index;
+  for( var ind=0;ind<vow.length;ind++){
+    if(arr[0] == vow[ind]){
+      flag=1;
+    }
+  }
+  if(flag == 1){
+    arr.push("way");
+    str = arr.join('');
+  }
+  else
+    {
+      for(ind =0 ;ind<arr.length;ind++){
+        if(arr[ind] == "a" || arr[ind]== "e" || arr[ind]== "i" ||arr[ind]== "o" ||arr[ind]=="u")
+          break;
+      }
+      str = str.substr(ind) + str.substr(0,ind) + "ay" ;
+    }
+  return str;
+}
+
+translatePigLatin("consonant");
